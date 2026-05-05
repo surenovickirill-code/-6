@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>less6</title>
+
+<style>
+/* Общие стили */
+div {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+/* Задание 1 — overflow */
+#scroll {
+    position: absolute;
+    overflow: scroll;
+    top: 10%;
+    bottom: 10%;
+    left: 0;
+    right: 20%;
+}
+
+#hidden {
+    position: absolute;
+    overflow: hidden;
+    top: 30%;
+    left: 10%;
+    width: 150px;
+    height: 97px;
+}
+
+#visible {
+    position: absolute;
+    overflow: visible;
+    top: 100px;
+    right: 50px;
+    max-width: 150px;
+    max-height: 97px;
+}
+
+/* Задание 2 — clip */
+#div1, #div2 {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+}
+
+/* фон-картинка */
+#div1 {
+    top: 350px;
+    left: 50px;
+    background-image: url("smale.png");
+}
+
+/* обрезка */
+#div2 {
+    top: 370px;
+    left: 80px;
+    background-color: blue;
+    clip: rect(50px, 200px, 250px, 60px);
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="scroll">
+Эта секция имеет значение scroll свойства overflow.
+Поэтому полосы прокрутки показаны, даже если текст небольшой.
+</div>
+
+<div id="hidden">
+Эта секция имеет значение hidden свойства overflow.
+Поэтому лишний текст просто обрезается и не виден.
+</div>
+
+<div id="visible">
+Эта секция имеет значение visible свойства overflow.
+Текст может выходить за границы блока и накладываться.
+</div>
+
+<!-- Задание 2 -->
+<div id="div1"></div>
+<div id="div2"></div>
+
+</body>
+</html>
